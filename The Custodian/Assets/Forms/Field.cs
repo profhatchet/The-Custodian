@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Animations;
 
-public class Rules : MonoBehaviour
+public class Field : MonoBehaviour
 {
+
     Form form;
 
     private void Awake()
     {
-        form = FindObjectOfType<Form>().GetComponent<Form>();
+        form = this.GetComponentInParent<Form>();
 
     }
 
     private void OnMouseDown()
     {
         Debug.Log($"Clicked {this.gameObject.name}");
-        form.SelectRule(this.gameObject);
+        form.SelectError(this.gameObject);
     }
-
 
 }
