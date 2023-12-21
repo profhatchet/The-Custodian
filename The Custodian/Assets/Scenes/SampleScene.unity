@@ -272,6 +272,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Form
       objectReference: {fileID: 0}
+    - target: {fileID: 1764039583008591869, guid: daef861563e88c54cbe8990576e386a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612034212405511421, guid: daef861563e88c54cbe8990576e386a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6474967148811767933, guid: daef861563e88c54cbe8990576e386a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.77
@@ -311,6 +319,10 @@ PrefabInstance:
     - target: {fileID: 6474967148811767933, guid: daef861563e88c54cbe8990576e386a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371166944596467847, guid: daef861563e88c54cbe8990576e386a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -393,21 +405,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2200421289661217066, guid: 3ce7553212e60e64ea6b63579c17499f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 5008707851361658815, guid: 3ce7553212e60e64ea6b63579c17499f, type: 3}
       propertyPath: m_Name
       value: RuleBook
-      objectReference: {fileID: 0}
-    - target: {fileID: 7376110464955597043, guid: 3ce7553212e60e64ea6b63579c17499f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7376110464955597043, guid: 3ce7553212e60e64ea6b63579c17499f, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 7376110464955597043, guid: 3ce7553212e60e64ea6b63579c17499f, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9155724471911515099, guid: 3ce7553212e60e64ea6b63579c17499f, type: 3}
       propertyPath: m_LocalPosition.x
