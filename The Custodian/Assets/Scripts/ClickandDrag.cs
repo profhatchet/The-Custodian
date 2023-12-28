@@ -1,35 +1,49 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ClickandDrag : MonoBehaviour
 {
-    public Rigidbody2D selectedObject;
+
+    public GameObject selectedObject;
     Vector3 offset;
-    Vector3 mousePosition;
+    [SerializeField] Collider2D[] results;
+
     void Update()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0))
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetMouseButtonDown(0) && Physics2D.OverlapPoint(mousePosition))
         {
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
-            if (targetObject)
-            {
-                selectedObject = targetObject.transform.gameObject.GetComponent<Rigidbody2D>();
-                offset = selectedObject.transform.position - mousePosition;
-            }
+            results = Physics2D.OverlapPointAll(mousePosition);
+            Collider2D highestCollider = GetHighestObject(results);
+            selectedObject = highestCollider.transform.gameObject;
+            offset = selectedObject.transform.position - mousePosition;
+        }
+        if (selectedObject)
+        {
+            selectedObject.transform.position = mousePosition + offset;
         }
         if (Input.GetMouseButtonUp(0) && selectedObject)
         {
             selectedObject = null;
         }
     }
-    void FixedUpdate()
+
+    Collider2D GetHighestObject(Collider2D[] results)  //currently just checks all colliders for movable tag
     {
-        if (selectedObject)
+        int highestValue = 0;
+        Collider2D highestObject = results[0];
+        foreach (Collider2D col in results)
         {
-            selectedObject.MovePosition(mousePosition + offset);
+            Renderer ren = col.gameObject.GetComponent<Renderer>();
+            if (col.gameObject.tag == "moveable")
+            {
+                Debug.Log(col.gameObject.tag);
+                highestValue = ren.sortingOrder;
+                highestObject = col;
+            }
         }
+        return highestObject;
     }
 }
-
