@@ -5,6 +5,7 @@ using UnityEngine;
 public class Rules : MonoBehaviour
 {
     Form form;
+    Vector3 clickedPosition;
 
     private void Awake()
     {
@@ -12,10 +13,18 @@ public class Rules : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
+    void OnMouseDown()
     {
-        Debug.Log($"Clicked {this.gameObject.name}");
-        form.SelectRule(this.gameObject);
+        clickedPosition = gameObject.transform.position;
+    }
+
+    void OnMouseUp()
+    {
+        if (gameObject.transform.position == clickedPosition)
+        {
+            Debug.Log($"Clicked {this.gameObject.name}");
+            form.SelectRule(this.gameObject);
+        }
     }
 
 
