@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Form : MonoBehaviour
@@ -8,13 +9,14 @@ public class Form : MonoBehaviour
     [SerializeField] GameObject selectedError;
     [SerializeField] GameObject rule;
     [SerializeField] GameObject selectedRule;
+    [SerializeField] Found found;
 
     bool match = false;
 
-    void OnMouseDown()
-    {
-        Debug.Log($"Clicked {this.gameObject.name}");
-    }
+    // void OnMouseDown()
+    // {
+    //     Debug.Log($"Clicked {this.gameObject.name}");
+    // }
 
     public void SelectError(GameObject error)
     {
@@ -40,6 +42,7 @@ public class Form : MonoBehaviour
         if (selectedRule != null && selectedError != null)
         {
             Debug.Log($"{match} match");
+            found.gameObject.SetActive(match);
         }
     }
 }

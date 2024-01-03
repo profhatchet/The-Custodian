@@ -42,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: UI
+    uniqueID: 741192813
+    locked: 0
   - name: Form
     uniqueID: 2503872549
     locked: 0
