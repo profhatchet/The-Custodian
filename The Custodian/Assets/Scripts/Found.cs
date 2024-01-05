@@ -9,7 +9,17 @@ public class Found : MonoBehaviour
     void Start()
     {
         this.gameObject.SetActive(false);
+        EventManager.MatchFound += ShowBanner;
+        EventManager.MatchLost += HideBanner;
     }
 
+    void ShowBanner()
+    {
+        gameObject.SetActive(true);
+    }
 
+    void HideBanner()
+    {
+        gameObject.SetActive(false);
+    }
 }

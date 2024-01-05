@@ -11,6 +11,8 @@ public class Form : MonoBehaviour
     [SerializeField] GameObject selectedRule;
     [SerializeField] Found found;
 
+
+
     bool match = false;
 
     // void OnMouseDown()
@@ -42,7 +44,15 @@ public class Form : MonoBehaviour
         if (selectedRule != null && selectedError != null)
         {
             Debug.Log($"{match} match");
-            found.gameObject.SetActive(match);
+            // found.gameObject.SetActive(match);
+            if (match)
+            {
+                EventManager.StartMatchFound();
+            }
+            else
+            {
+                EventManager.StartMatchLost();
+            }
         }
     }
 }
