@@ -5,15 +5,27 @@ using UnityEngine;
 
 public class Form : MonoBehaviour
 {
+    [Header("Errors")]
     [SerializeField] GameObject error;
     [SerializeField] GameObject selectedError;
+
+    [Header("Rules")]
+    [SerializeField] string ruleStr;
     [SerializeField] GameObject rule;
     [SerializeField] GameObject selectedRule;
-    [SerializeField] Found found;
 
+    [Header("Matching")]
+    // [SerializeField] Found found;
+    [SerializeField] bool match = false;
+    
 
+void Start()
+{
+    rule = GameObject.Find(ruleStr);
+    EventManager.CheckMatch += CheckMatch;
+    // found = FindObjectOfType<Found>().GetComponent<Found>();
+}
 
-    bool match = false;
 
     // void OnMouseDown()
     // {
@@ -23,12 +35,10 @@ public class Form : MonoBehaviour
     public void SelectError(GameObject error)
     {
         selectedError = error;
-        CheckMatch();
     }
     public void SelectRule(GameObject rule)
     {
         selectedRule = rule;
-        CheckMatch();
     }
 
     private void CheckMatch()
@@ -41,6 +51,7 @@ public class Form : MonoBehaviour
         {
             match = false;
         }
+
         if (selectedRule != null && selectedError != null)
         {
             Debug.Log($"{match} match");

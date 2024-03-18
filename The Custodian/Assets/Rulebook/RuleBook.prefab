@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5522916001189379506}
   - component: {fileID: 1597171956055771970}
   m_Layer: 0
-  m_Name: AUTHORISED
+  m_Name: Authorised
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,8 +172,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.24, y: 0.37, z: 0}
-  m_LocalScale: {x: 3, y: 3.0027394, z: 3.0027394}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.75, y: 2.7525113, z: 2.7525113}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2200421289661217066}
   m_Father: {fileID: 0}
@@ -273,8 +273,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1776388775
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 8057289025325804405, guid: c5f4db66b480af6489ad21d527d87067, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 3267022054773008830}
   - component: {fileID: 8540191355263020682}
   m_Layer: 0
-  m_Name: NAMED
+  m_Name: Named
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 6506079707150299528}
   - component: {fileID: 124315515435765008}
   m_Layer: 0
-  m_Name: ITEMS
+  m_Name: Items
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 9033250796031489681}
   - component: {fileID: 3423440977585164182}
   m_Layer: 0
-  m_Name: SIGNATURE
+  m_Name: Signed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

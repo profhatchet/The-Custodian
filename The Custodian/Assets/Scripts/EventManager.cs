@@ -2,26 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class EventManager : MonoBehaviour
 {
+    [SerializeField] GameObject[] levels;
 
     public static event Action MatchFound;
     public static event Action MatchLost;
     public static event Action NewFieldSelected;
     public static event Action NewRuleSelected;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public static event Action NextForm;
+    public static event Action CheckMatch;
 
     public static void StartMatchFound()
     {
@@ -40,5 +32,11 @@ public class EventManager : MonoBehaviour
     public static void StartNewRuleSelected()
     {
         NewRuleSelected?.Invoke();
+    }
+
+    public static void StartCheckMatch()
+    {
+        CheckMatch?.Invoke();
+        Debug.Log("Checking");
     }
 }
