@@ -17,14 +17,14 @@ public class Form : MonoBehaviour
     [Header("Matching")]
     // [SerializeField] Found found;
     [SerializeField] bool match = false;
-    
 
-void Start()
-{
-    rule = GameObject.Find(ruleStr);
-    EventManager.CheckMatch += CheckMatch;
-    // found = FindObjectOfType<Found>().GetComponent<Found>();
-}
+
+    void Start()
+    {
+        rule = GameObject.Find(ruleStr);
+        EventManager.CheckMatch += CheckMatch;
+        // found = FindObjectOfType<Found>().GetComponent<Found>();
+    }
 
 
     // void OnMouseDown()
@@ -55,7 +55,6 @@ void Start()
         if (selectedRule != null && selectedError != null)
         {
             Debug.Log($"{match} match");
-            // found.gameObject.SetActive(match);
             if (match)
             {
                 EventManager.StartMatchFound();
