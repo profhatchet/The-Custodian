@@ -37,6 +37,5 @@ public class EventManager : MonoBehaviour
     public static void StartCheckMatch()
     {
         CheckMatch?.Invoke();
-        Debug.Log("Checking");
     }
 }
